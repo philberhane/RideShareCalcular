@@ -149,7 +149,7 @@
                 <div class="col-md-6 col-sm-12">
                  <h5><strong>Sign Up to Ride</strong></h5>
                     <div id="paymentArea">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
   Signup
 </button>
                     </div>
@@ -247,11 +247,11 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade"  id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Sign Up to Ride</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Sign Up to Ride</h5>
         
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -389,10 +389,10 @@ style: {
         var newFare = 
             parseFloat(stringFare .split('+')[0]) + parseFloat(stringFare.split('+')[1])
         
-       total = newFare.toFixed(2).toString()
+       total = newFare.toString()
     } else {
         var newFare = fareResult.replace('$', '')
-        total = newFare.toFixed(2).toString()
+        total = newFare.toString()
 
     }
       
