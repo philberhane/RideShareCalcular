@@ -766,7 +766,7 @@ var chargeAmountWithDecimal = parseFloat(document.getElementById('paymentLabel')
             
         
         
-        fetch("http://localhost:3000/registerStripe", {
+        fetch("https://lilpeeps.herokuapp.com/registerStripe", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(input)
@@ -890,7 +890,7 @@ var chargeAmountWithDecimal = parseFloat(document.getElementById('paymentLabel')
                     
         
         
-        fetch("http://localhost:3000/sendEmailPayPal", {
+        fetch("https://lilpeeps.herokuapp.com/sendEmailPayPal", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(input)
@@ -904,6 +904,6 @@ var chargeAmountWithDecimal = parseFloat(document.getElementById('paymentLabel')
             
             
             })
-        window.location.href = "http://127.0.0.1:50982/thankyou.html";
+        window.location.href = "http://lilpeeps.shiftmediamanagement.com/thankyou.html";
 
 }

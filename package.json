@@ -3,6 +3,9 @@
     "name": "startbootstrap-creative",
     "version": "4.1.1",
     "description": "Creative is a stylish one page HTML theme for Bootstrap.",
+    "scripts": {
+      "start": "node app.js"
+  },
     "keywords": [
         "css",
         "sass",
