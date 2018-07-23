@@ -30,13 +30,13 @@ module.exports = {
 });
         let childString;
         
-    /*    for(i=0;i<childrenObjects.length;i++) {
+        for(i=0;i<childrenObjects.length;i++) {
             childString += '\n \n Child' + '\n Full Name: '+childrenObjects[i].name+'\n Gender: '+childrenObjects[i].gender+'\n Date Of Birth: '+childrenObjects[i].dateOfBirth+'\n Current School: '+childrenObjects[i].currentSchool+'\n Teacher Name: '+childrenObjects[i].teacherName+'\n Booster Seat? '+childrenObjects[i].booster
             
             if (childrenObjects[i].booster === 'Yes') {
                childString += '\n Height: '+ childrenObjects[i].height+'\n Weight: '+childrenObjects[i].weight
             }
-        }*/
+        }
         
         console.log(childString)
         
@@ -55,7 +55,7 @@ module.exports = {
   from: process.env.EMAIL,
   to: 'philberhane7@gmail.com',
   subject: "A New User has registered!",
-  text: 'An invoice of $'+chargeAmountWithDecimal+' has been paid using '+paymentMethod+'\n Does this include the $35 Registration Fee? '+annualFeeIncluded+'\n \n The following information was filled out: \n\n Home Address: '+generalInfo.homeAddress+'\n Home Phone Number: '+generalInfo.homePhone+'\n\n Parent #1 \n Full Name: '+parentOne.name+'\n Cell Phone Number: '+parentOne.cellNumber+ '\n Email Address: '+parentOne.email+'\n Work Address: '+parentOne.workAddress+'\n Work Phone Number: '+parentOne.workAddress+'\n\n Parent #2 \n Full Name: '+parentTwo.name+'\n Cell Phone Number: '+parentTwo.cellNumber+ '\n Email Address: '+parentTwo.email+'\n Work Address: '+parentTwo.workAddress+'\n Work Phone Number: '+parentTwo.workAddress+/*childString+*/'\n \n Emergency Contact #1'+'\n Full Name: '+emergencyContact1.name+'\n Relationship: '+emergencyContact1.relationship+'\n Phone Number: '+emergencyContact1.number+'\n \n Emergency Contact #2'+'\n Full Name: '+emergencyContact2.name+'\n Relationship: '+emergencyContact2.relationship+'\n Phone Number: '+emergencyContact2.number+'\n \n Additional Info:'+'\n \n'+additionalInfo
+  text: 'An invoice of $'+chargeAmountWithDecimal+' has been paid using '+paymentMethod+'\n Does this include the $35 Registration Fee? '+annualFeeIncluded+'\n \n The following information was filled out: \n\n Home Address: '+generalInfo.homeAddress+'\n Home Phone Number: '+generalInfo.homePhone+'\n\n Parent #1 \n Full Name: '+parentOne.name+'\n Cell Phone Number: '+parentOne.cellNumber+ '\n Email Address: '+parentOne.email+'\n Work Address: '+parentOne.workAddress+'\n Work Phone Number: '+parentOne.workAddress+'\n\n Parent #2 \n Full Name: '+parentTwo.name+'\n Cell Phone Number: '+parentTwo.cellNumber+ '\n Email Address: '+parentTwo.email+'\n Work Address: '+parentTwo.workAddress+'\n Work Phone Number: '+parentTwo.workAddress+childString+'\n \n Emergency Contact #1'+'\n Full Name: '+emergencyContact1.name+'\n Relationship: '+emergencyContact1.relationship+'\n Phone Number: '+emergencyContact1.number+'\n \n Emergency Contact #2'+'\n Full Name: '+emergencyContact2.name+'\n Relationship: '+emergencyContact2.relationship+'\n Phone Number: '+emergencyContact2.number+'\n \n Additional Info:'+'\n \n'+additionalInfo
 }; 
      transporter.sendMail(mailOptions, function(error, info){
   if (error) {
