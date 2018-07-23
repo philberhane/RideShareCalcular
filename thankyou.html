@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Calculator</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+           <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#header">Get Fare</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Rates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Process</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+            
+          </ul>
+        </div> 
+      </div>
+    </nav>
+    
+
+
+    <header id="header" class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+       <p><strong>Thank you!<strong></p>
+           <p><strong>Someone will contact you shortly regarding your ride!</strong></p>
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1>
+              Get your <strong>Fare</strong> now!
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5">Use our calculator to get a <strong>Free Estimate</strong>.</p>
+            <div>
+              
+               <div class="pac-card" id="pac-card">
+                     <div id="pac-container">
+                     <div class="form-group">
+				    <label>Start Address</label>
+                   <input id="start" type="text" class="form-control" placeholder="Where do you want to start?">
+                    </div>
+                    <div class="form-group">
+				    <label>Destination Address</label>
+                   <input id="end" type="text" class="form-control" placeholder="Where do you want to go?">
+                    </div>
+                </div>
+                </div>
+                    <div class="form-group">
+				    <label>Number of Passengers</label>
+                   <select id="select">
+                       <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Do you wish to include the <strong>$35 Annual Registration Fee?</strong></label>
+                   <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="Yes" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">
+    Yes
+  </label>
+</div>
+                    </div>
+                    <button id="eventButton" class="btn btn-primary ">
+                        START
+                    </button>
+                    
+                    <a id="invisibleButton" href="#output" class="js-scroll-trigger"></a>
+                    
+                    <!--onclick="start()" -->
+				    
+				</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <section id="output">
+       <div class="container">
+       <div class="row">
+        <div class="col-md-6 col-sm-12" id="map" style="height:500px;"></div>
+        <div class="col-md-6 col-sm-12">
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-6 col-sm-12">
+                    
+                    <h5><i class="fa fa-map-marker text-primary "></i> <strong>Start</strong></h5>
+                    <p id="startResult"></p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h5><i class="fa fa-map-marker text-primary "></i> <strong>Destination</strong></h5>
+                    <p id="endResult"></p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-6 col-sm-12">
+                    <h5><i class="fa fa-arrows-h text-primary "></i> <strong>Distance</strong></h5>
+                    <p id="distanceResult"></p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h5><i class="fa fa-hourglass text-primary "></i> <strong>Duration</strong></h5>
+                    <p id="durationResult"></p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 25px;">
+                
+                <div class="col-md-6 col-sm-12">
+                    <h5><i class="fa fa-dollar text-primary "></i> <strong>Fare</strong></h5>
+                    <p id="fareResult"></p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                 <h5><strong>Sign Up to Ride</strong></h5>
+                    <div id="paymentArea">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Signup
+</button>
+                    </div>
+                    <p id="fareMessage"></p>
+                </div>
+            </div>
+            
+        </div>
+           </div>
+        </div>
+    </section>
+
+    <section class="bg-primary" style="background-color: #f9dd39" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">Our Rates</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4"><strong>Family of one:</strong> $1.25/mile + $.50/min + $2 booking fee. (Minimum fare $16)</p>
+            <p class="text-faded mb-4"><strong>Family of two:</strong> $.75/mile + $.30/min + $1 booking fee. (Minimum fare $10 per child)</p>
+              <p class="text-faded mb-4"><strong>Family of three:</strong> $.63/mile + $.25/min + $1 booking fee. (Minimum fare $8 per child)</p>
+              <p class="text-faded mb-4"><strong>Family of four:</strong> $.63/mile + $.25/min + $1 booking fee. (Minimum fare $8 per child)</p>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <script src="https://js.stripe.com/v3/"></script>
+
+
+
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Our Process</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-map-marker text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Route</h3>
+              <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-calculator text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Fare</h3>
+              <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-check-square text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Registration</h3>
+              <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="contact" style="background-color: #212529; color: white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Contact Us</h2>
+            <hr class="my-4">
+            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p>123-456-6789</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign Up to Ride</h5>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <input id="homeAddress" type="text" class="form-control" placeholder="Home Address">
+       <input id="homePhone" type="number" class="form-control" placeholder="Home Phone Number">
+        <div class="form-group" id="parent1">
+            <label>Parent #1</label>
+            <input type="text" class="form-control" placeholder="Full Name">
+            <input type="number" class="form-control" placeholder="Cell Phone Number">
+            <input type="email" class="form-control" placeholder="Email Address">
+            <input type="text" class="form-control" placeholder="Work Address">
+            <input type="number" class="form-control" placeholder="Work Phone Number">
+          </div>
+          <div class="form-group" id="parent2">
+            <label>Parent #2</label>
+            <input type="text" class="form-control" placeholder="Full Name">
+            <input type="number" class="form-control" placeholder="Cell Phone Number">
+            <input type="email" class="form-control" placeholder="Email Address">
+            <input type="text" class="form-control" placeholder="Work Address">
+            <input type="number" class="form-control" placeholder="Work Phone Number">
+          </div>
+          <div class="form-group child">
+            <label>Child</label>
+            <input type="text" class="form-control" placeholder="Full Name">
+            <input type="text" class="form-control" placeholder="Gender">
+            <input type="text" class="form-control" placeholder="Date of Birth">
+            <input type="text" class="form-control" placeholder="Current School">
+            <input type="text" class="form-control" placeholder="Teacher's Name">
+            <label>Booster Seat?</label>
+                   <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="Yes" id="defaultCheck2" onclick="display(this.id)">
+  <label class="form-check-label" for="defaultCheck2">
+    Yes
+  </label>
+</div>
+        <div id="heightAndWeight" style="display: none">
+         <input type="number" class="form-control" placeholder="Child's Height">
+         <input type="number" class="form-control" placeholder="Child's Weight">
+              </div>
+          </div>
+          <div id="additionalChildren"></div>
+          <p>Click to add more children</p>
+          <button class="btn btn-primary" onclick="addChildren()">+</button>
+          <div class="form-group" id="emergency1">
+          <label>Emergency Contact #1</label>
+          <input type="text" class="form-control" placeholder="Full Name">
+          <input type="text" class="form-control" placeholder="Relationship">
+          <input type="number" class="form-control" placeholder="Phone Number">
+          </div>
+          <div class="form-group" id="emergency2">
+          <label>Emergency Contact #2</label>
+          <input type="text" class="form-control" placeholder="Full Name">
+          <input type="text" class="form-control" placeholder="Relationship">
+          <input type="number" class="form-control" placeholder="Phone Number">
+          </div>
+          <div class="form-group">
+  <label for="comment">Any Additional Information for us to know:</label>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+</div>
+        <div id="newPay" style="display: none">
+            <label id="paymentLabel"></label>
+         <div id="payment-form">
+    <div class="form-row">
+    <label>Please enter your name (as it appears on your credit card)</label>
+    </div>
+  <div class="form-row">
+   <input id="cardName" placeholder= "Name" style="font-size: 18px; font-family: Helvetica Neue, Helvetica, sans-serif;" class="form-control">
+     </div>
+  <div class="form-row">
+    <label for="card-element">
+      Credit or debit card
+    </label>
+    <div style="width: 100%; margin-top: 10px;" id="card-element">
+      <!-- A Stripe Element will be inserted here. -->
+      
+    </div>
+
+    <!-- Used to display form errors. -->
+    <div id="card-errors" role="alert"></div>
+  </div>
+
+
+  
+  <div id="server-response" role="alert">
+      
+  </div>
+</div>
+         </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id="useCard" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="stripeAppear()">Use Card</button>
+        <div id="paypal-button"></div>
+      </div>
+    </div>
+  </div>
+</div>
+   
+   
+
+   
+   
+  
+       
+        
+ 
+
+    
+    
+    
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+paypal.Button.render({
+  env: 'sandbox',
+  client: {
+    sandbox: 'demo_sandbox_client_id'
+  },
+  payment: function (data, actions) {
+    return actions.payment.create({
+      transactions: [{
+        amount: {
+          total: '0.01',
+          currency: 'USD'
+        }
+      }]
+    });
+  },
+  onAuthorize: function (data, actions) {
+    return actions.payment.execute()
+      .then(function () {
+        window.alert('Thank you for your purchase!');
+      });
+  }
+}, '#paypal-button');
+</script>
+        
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+    
+    <script type="text/javascript" src="js/main.js"> </script>
+
+  
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARFfy8e5YPQHD5xS_9VP4N1PYCHXsI5Xc&libraries=places&callback=initMap"async defer></script>
+
+  </body>
+
+</html>
