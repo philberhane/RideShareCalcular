@@ -727,7 +727,7 @@ var chargeAmountWithDecimal = parseFloat(document.getElementById('paymentLabel')
         }   
    
     })
-    window.location.href = "http://lilpeeps.shiftmediamanagement.com/thankyou.html";
+   // window.location.href = "http://lilpeeps.shiftmediamanagement.com/thankyou.html";
 }
 
 
