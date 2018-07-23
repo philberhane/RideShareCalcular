@@ -2,7 +2,7 @@ module.exports = {
     
     registerStripe(req, res) {
         
-        const stripe = require("stripe")('sk_test_SomoK17KafHOIXWqNAegapd5');
+        const stripe = require("stripe")(process.env.STRIPE_PRIVATE_API);
         const nodemailer = require('nodemailer');
         
         const token = req.body.token
@@ -105,13 +105,13 @@ module.exports = {
     port: 465,
     secure: true,
   auth: {
-    user: 'philberhane7@gmail.com',
-    pass: 'Habteab1'
+    user: process.env.EMAIL,
+    pass: process.env.PASS
   }
 });
         
         var mailOptions = {
-  from: 'philberhane7@gmail.com',
+  from: process.env.EMAIL,
   to: 'philberhane7@gmail.com',
   subject: "A New User has registered!",
   text: 'An invoice of $'+chargeAmountWithDecimal+' has been paid using '+paymentMethod+'\n Does this include the $35 Registration Fee? '+annualFeeIncluded+'\n \n The following information was filled out: \n\n Home Address: '+generalInfo.homeAddress+'\n Home Phone Number: '+generalInfo.homePhone+'\n\n Parent #1 \n Full Name: '+parentOne.name+'\n Cell Phone Number: '+parentOne.cellNumber+ '\n Email Address: '+parentOne.email+'\n Work Address: '+parentOne.workAddress+'\n Work Phone Number: '+parentOne.workAddress+'\n\n Parent #2 \n Full Name: '+parentTwo.name+'\n Cell Phone Number: '+parentTwo.cellNumber+ '\n Email Address: '+parentTwo.email+'\n Work Address: '+parentTwo.workAddress+'\n Work Phone Number: '+parentTwo.workAddress+childString+'\n \n Emergency Contact #1'+'\n Full Name: '+emergencyContact1.name+'\n Relationship: '+emergencyContact1.relationship+'\n Phone Number: '+emergencyContact1.number+'\n \n Emergency Contact #2'+'\n Full Name: '+emergencyContact2.name+'\n Relationship: '+emergencyContact2.relationship+'\n Phone Number: '+emergencyContact2.number+'\n \n Additional Info:'+'\n \n'+additionalInfo
