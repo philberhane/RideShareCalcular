@@ -177,7 +177,8 @@ function initMap() {
               
               
         document.getElementById('endResult').innerText = destinationList[0];
-        document.getElementById('distanceResult').innerText = (parseFloat(response.rows[0].elements[0].distance.text.replace(' km', ''))*0.621371) + ' miles'; 
+        
+        document.getElementById('distanceResult').innerText = (parseFloat(response.rows[0].elements[0].distance.text.replace(' km', ''))*0.621371).toFixed(2) + ' miles'; 
         
               
               document.getElementById('durationResult').innerText = response.rows[0].elements[0].duration.text; 
@@ -206,23 +207,20 @@ function initMap() {
                   minimumFare = 16;
                   
                   fare = distanceCost + durationCost + bookingFee
+  
+                  if (fare.toFixed(2) < minimumFare) {
+                     fare = minimumFare + bookingFee
+                      
+                  } else {
+                      
+                      fare = distanceCost + durationCost + bookingFee
+                  }
                   
                   document.getElementById('fareResult').innerText = '$' + fare.toFixed(2)
-                  
+                      
                   if (document.getElementById('defaultCheck1').checked === true) {
                       document.getElementById('fareResult').innerText += ' +$35 (annual registration fee)'
                   } 
-                  
-                  if (fare.toFixed(2) < minimumFare) {
-                      document.getElementById('paymentArea').style.display = 'none';
-                          
-                       document.getElementById('fareMessage').innerText = '(A Minimum Fare of $16 is required)'
-                  } else {
-                      document.getElementById('paymentArea').style.display = 'block';
-                          
-                       document.getElementById('fareMessage').innerText = ''
-                      
-                  }
    
               }
               
@@ -237,24 +235,22 @@ function initMap() {
                   
                   minimumFare = 20;
                   
-                  fare = (distanceCost + durationCost + bookingFee)*2
+                  fare = (distanceCost + durationCost)*2 + bookingFee
+                  
+                 if (fare.toFixed(2) < minimumFare) {
+                     fare =  minimumFare*2 + bookingFee
+                     
+                  } else {
+                     
+                      fare = (distanceCost + durationCost)*2 + bookingFee
+                  }
+                  
                   
                   document.getElementById('fareResult').innerText = '$' + fare.toFixed(2)
                   
                   if (document.getElementById('defaultCheck1').checked === true) {
                       document.getElementById('fareResult').innerText += ' +$35 (annual registration fee)'
                   } 
-                  
-                 if (fare.toFixed(2) < minimumFare) {
-                      document.getElementById('paymentArea').style.display = 'none';
-                          
-                       document.getElementById('fareMessage').innerText = '(A Minimum Fare of $20 is required)'
-                  } else {
-                      document.getElementById('paymentArea').style.display = 'block';
-                          
-                       document.getElementById('fareMessage').innerText = ''
-                      
-                  }
    
               }
               
@@ -268,25 +264,23 @@ function initMap() {
                   bookingFee = 1;
                   
                   minimumFare = 24;
+                                    
+                  fare = (distanceCost + durationCost)*3 + bookingFee
                   
-                  fare = (distanceCost + durationCost + bookingFee)*3
+                  if (fare.toFixed(2) < minimumFare) {
+                      fare =  minimumFare*3 + bookingFee
+                      
+                      
+                  } else {
+                     fare = (distanceCost + durationCost)*3 + bookingFee
+                      
+                  }
                   
                   document.getElementById('fareResult').innerText = '$' + fare.toFixed(2)
                   
                   if (document.getElementById('defaultCheck1').checked === true) {
                       document.getElementById('fareResult').innerText += ' +$35 (annual registration fee)'
                   } 
-                  
-                  if (fare.toFixed(2) < minimumFare) {
-                      document.getElementById('paymentArea').style.display = 'none';
-                          
-                       document.getElementById('fareMessage').innerText = '(A Minimum Fare of $24 is required)'
-                  } else {
-                      document.getElementById('paymentArea').style.display = 'block';
-                          
-                       document.getElementById('fareMessage').innerText = ''
-                      
-                  }
    
               }
               
@@ -301,24 +295,22 @@ function initMap() {
                   
                   minimumFare = 28;
                   
-                  fare = (distanceCost + durationCost + bookingFee)*4
+                  fare = (distanceCost + durationCost)*4 + bookingFee
+                 
                   
-                  document.getElementById('fareResult').innerText = '$' + fare.toFixed(2)
+                  if (fare.toFixed(2) < minimumFare) {
+                     fare =  minimumFare*4 + bookingFee
+                      
+                  } else {
+                    fare = (distanceCost + durationCost)*4 + bookingFee
+                      
+                  }
+                  
+                   document.getElementById('fareResult').innerText = '$' + fare.toFixed(2)
                   
                   if (document.getElementById('defaultCheck1').checked === true) {
                       document.getElementById('fareResult').innerText += ' +$35 (annual registration fee)'
                   } 
-                  
-                  if (fare.toFixed(2) < minimumFare) {
-                      document.getElementById('paymentArea').style.display = 'none';
-                          
-                       document.getElementById('fareMessage').innerText = '(A Minimum Fare of $28 is required)'
-                  } else {
-                      document.getElementById('paymentArea').style.display = 'block';
-                          
-                       document.getElementById('fareMessage').innerText = ''
-                      
-                  }
    
               }
               
@@ -727,7 +719,9 @@ var chargeAmountWithDecimal = parseFloat(document.getElementById('paymentLabel')
         }   
    
     })
-   // window.location.href = "http://lilpeeps.shiftmediamanagement.com/thankyou.html";
+        document.getElementById('hiddenButton1').click()
+    document.getElementById('hiddenButton2').click()
+        document.getElementById('thankyou').style.display = 'block'
 }
 
 
@@ -841,6 +835,10 @@ var chargeAmountWithDecimal = parseFloat(document.getElementById('paymentLabel')
             
             
             })
-        window.location.href = "http://lilpeeps.shiftmediamanagement.com/thankyou.html";
+        document.getElementById('hiddenButton1').click()
+    document.getElementById('hiddenButton2').click()
+        document.getElementById('thankyou').style.display = 'block'
+        
 
 }
+
