@@ -193,7 +193,7 @@ function initMap() {
               
              var minimumFare;
               
-             var fare;
+             let fare;
               
               
               if (passengerCount === 1) {
@@ -235,14 +235,14 @@ function initMap() {
                   
                   minimumFare = 20;
                   
-                  fare = (distanceCost + durationCost)*2 + bookingFee
+                  fare = ((distanceCost + durationCost)*2) + bookingFee
                   
                  if (fare.toFixed(2) < minimumFare) {
-                     fare =  minimumFare*2 + bookingFee
+                     fare =  minimumFare + bookingFee
                      
                   } else {
                      
-                      fare = (distanceCost + durationCost)*2 + bookingFee
+                      fare = ((distanceCost + durationCost)*2) + bookingFee
                   }
                   
                   
@@ -265,14 +265,13 @@ function initMap() {
                   
                   minimumFare = 24;
                                     
-                  fare = (distanceCost + durationCost)*3 + bookingFee
-                  
+                    fare = ((distanceCost + durationCost)*3) + bookingFee                  
                   if (fare.toFixed(2) < minimumFare) {
-                      fare =  minimumFare*3 + bookingFee
+                      fare =  minimumFare + bookingFee
                       
                       
                   } else {
-                     fare = (distanceCost + durationCost)*3 + bookingFee
+                     fare = ((distanceCost + durationCost)*3) + bookingFee
                       
                   }
                   
@@ -299,10 +298,10 @@ function initMap() {
                  
                   
                   if (fare.toFixed(2) < minimumFare) {
-                     fare =  minimumFare*4 + bookingFee
+                     fare =  minimumFare + bookingFee
                       
                   } else {
-                    fare = (distanceCost + durationCost)*4 + bookingFee
+                    fare = ((distanceCost + durationCost)*4) + bookingFee
                       
                   }
                   
